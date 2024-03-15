@@ -10,6 +10,11 @@ function UserDetails({ user }) {
     setShowMore(!showMore);
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`; // Formato: DD/MM/YYYY
+  };
+
   return (
     <div>
       <div>
@@ -20,13 +25,13 @@ function UserDetails({ user }) {
       {showMore && (
         <div className='mas_datos flex mt-10 flex-col'>
           <h2 className='text-2xl text-center font-bold'>User Details</h2>
-          <p className='text-lg mb-2 mt-4'>Name: {user.name.first} {user.name.last}</p>
-          <p className='text-lg mb-2'><span>Gender:</span> {user.gender}</p>
-          <p className='text-lg mb-2'><span>Email:</span> {user.email}</p>
-          <p className='text-lg mb-2'><span>Phone:</span> {user.phone}</p>
-          <p className='text-lg mb-2'><span>Location:</span> {user.location.city}, {user.location.state}, {user.location.country}</p>
-          <p className='text-lg mb-2'><span>DOB:</span> {user.dob.date}</p>
-          <p className='text-lg mb-2'><span>Age:</span> {user.dob.age}</p>
+          <p className='text-lg mb-2 mt-4'><span className='font-bold'>Name:</span> {user.name.first} {user.name.last}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>Gender:</span> {user.gender}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>Email:</span> {user.email}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>Phone:</span> {user.phone}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>Location:</span> {user.location.city}, {user.location.state}, {user.location.country}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>DOB:</span>  {formatDate(user.dob.date)}</p>
+          <p className='text-lg mb-2'><span className='font-bold'>Age:</span> {user.dob.age}</p>
         </div>
       )}
     </div>
