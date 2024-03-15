@@ -18,6 +18,7 @@ function App() {
     }
   };
 
+
   const handleSearchSubmit = async (searchParams) => {
     const users = await fetchUsers(searchParams);
     setManyUsers(users);
@@ -28,6 +29,10 @@ function App() {
 
   }, []); // Sin dependencias
 
+
+
+  console.log(manyUsers);
+  
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Random Users</h1>
