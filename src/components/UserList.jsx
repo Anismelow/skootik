@@ -23,7 +23,7 @@ function UserDetails({ user }) {
         </button>
       </div>
       {showMore && (
-        <div className='mas_datos flex mt-10 flex-col'>
+        <div className='mas_datos flex mt-10 flex-col w-fit'>
           <h2 className='text-2xl text-center font-bold'>User Details</h2>
           <p className='text-lg mb-2 mt-4'><span className='font-bold'>Name:</span> {user.name.first} {user.name.last}</p>
           <p className='text-lg mb-2'><span className='font-bold'>Gender:</span> {user.gender}</p>
